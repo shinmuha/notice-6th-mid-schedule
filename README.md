@@ -1,0 +1,1 @@
+# notice-6th-mid-schedule
