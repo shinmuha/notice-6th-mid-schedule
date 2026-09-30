@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="only light">
 <meta name="robots" content="noindex, nofollow">
-<title>제6기 중급현장지휘관 자격인증 과정 – 보조강사 참여 알림</title>
-<meta property="og:title" content="제6기 중급현장지휘관 자격인증 과정 – 보조강사 참여 알림">
-<meta property="og:description" content="참여 일정 10. 30.(금) ~ 11. 6.(금) · 부산소방학교 지휘역량강화센터">
+<title>제6기 중급현장지휘관 자격인증 과정 – 보조강사 재모집 안내</title>
+<meta property="og:title" content="제6기 중급현장지휘관 자격인증 과정 – 보조강사 재모집 안내">
+<meta property="og:description" content="시간표 변경 · 1주차 참여일이 10. 30.(금)에서 10. 29.(목)로 변경되었습니다">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=IBM+Plex+Sans+KR:wght@400;600;700&display=swap">
@@ -24,6 +24,9 @@
     --green: #2a7a4a;
     --blue: #2a5a9a;
     --orange: #a85320;
+    --alert: #9c3823;
+    --alert-bg: #f8e7e0;
+    --alert-rule: #e0b7a6;
     --sans: 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
     --plex: 'IBM Plex Sans KR', 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
   }
@@ -56,6 +59,39 @@
   .title-main { font-size: 27px; font-weight: 700; color: var(--ink); line-height: 1.5; }
   .title-main .green { color: var(--green); }
   .title-sub { font-weight: 700; font-size: 20px; color: var(--gold); margin-top: 8px; }
+
+  /* ── 변경 안내 ── */
+  .notice {
+    background: var(--alert-bg);
+    border: 1px solid var(--alert-rule);
+    border-left: 5px solid var(--alert);
+    border-radius: 10px;
+    padding: 16px 16px 14px;
+    margin-bottom: 20px;
+  }
+  .notice-title {
+    font-family: var(--plex);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--alert);
+    margin-bottom: 8px;
+  }
+  .notice-body { font-size: 16px; line-height: 1.75; color: var(--ink-2); font-weight: 700; }
+  .notice-change {
+    display: block;
+    margin: 10px 0;
+    padding: 10px 12px;
+    background: #fff;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 900;
+    text-align: center;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  .notice-change .was { color: var(--muted); text-decoration: line-through; }
+  .notice-change .now { color: var(--alert); }
+  .notice-foot { font-size: 15px; color: var(--muted); font-weight: 700; margin-top: 8px; }
 
   .greeting {
     font-family: var(--plex);
@@ -102,6 +138,20 @@
   .cs-count.cnt-2 { color: #6fb8f5; }
   .cs-count.cnt-4 { color: #f0935f; }
 
+  /* 변경된 날짜 : 3열 정렬을 흩뜨리지 않도록 설명은 아래 줄에 */
+  .cs-row.changed { border-bottom: none; padding-bottom: 4px; }
+  .cs-row.changed .cs-date { color: #ff9e7a; }
+  .cs-note {
+    display: block;
+    padding: 0 0 10px;
+    border-bottom: 1px solid #52493d;
+    color: #ffb59a;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+  .cs-note .was { color: #9d9081; text-decoration: line-through; }
+
   .d-num { display: inline-block; font-variant-numeric: tabular-nums; }
   /* 요약표 : 한 자리 날짜를 오른쪽 정렬해 요일·시간 열을 맞춤 */
   .cs-date .dd { display: inline-block; min-width: 1.56em; text-align: right; }
@@ -110,6 +160,7 @@
   @media (max-width: 400px) {
     .core-summary { padding: 16px; }
     .cs-date, .cs-time, .cs-count { font-size: 16px; }
+    .cs-note { font-size: 13px; }
   }
   /* 아주 좁은 화면 : 시간 수를 아래 줄로 */
   @media (max-width: 340px) {
@@ -162,11 +213,13 @@
   .acc-date-line { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
   .acc-date { font-weight: 900; font-size: 17px; color: var(--ink); }
   .has-assist .acc-date { color: var(--gold); }
+  .has-assist.is-changed .acc-date { color: var(--alert); }
   .acc-time { font-size: 13px; color: var(--muted); margin-top: 2px; }
 
   .acc-inline-badge { font-size: 13px; font-weight: 900; }
   .acc-inline-badge.cnt-2 { color: var(--blue); }
   .acc-inline-badge.cnt-4 { color: var(--orange); }
+  .acc-inline-badge.is-new { color: var(--alert); }
 
   .acc-chevron {
     font-size: 13px;
@@ -250,21 +303,33 @@
 <header class="title-block">
   <p class="title-bracket">부산소방학교 지휘역량강화센터</p>
   <h1 class="title-main">제6기 <span class="green">중급</span>현장지휘관<br>자격인증 과정</h1>
-  <p class="title-sub">보조강사 참여 알림</p>
+  <p class="title-sub">보조강사 재모집 안내</p>
 </header>
 
+<!-- 변경 안내 -->
+<section class="notice">
+  <h2 class="notice-title">교육 시간표가 변경되었습니다</h2>
+  <p class="notice-body">1주차 보조강사 참여일이 하루 앞당겨졌습니다.</p>
+  <p class="notice-change">
+    <span class="was">10. 30.(금)</span> &nbsp;→&nbsp; <span class="now">10. 29.(목)</span>
+  </p>
+  <p class="notice-body">앞서 진행한 투표는 무효 처리하고,<br>변경된 일정으로 다시 투표를 받습니다.</p>
+  <p class="notice-foot">※ 2주차(11. 2.~11. 6.) 일정은 변동 없습니다.</p>
+</section>
+
 <p class="greeting">
-  보조강사 단톡방 <span class="gold">참여 투표에</span><br>적극적인 협조 부탁드립니다.
+  번거롭게 해 드려 죄송합니다.<br><span class="gold">다시 한번 참여 투표에</span> 협조 부탁드립니다.
 </p>
 
 <!-- 핵심 요약 : 행을 누르면 해당 날짜 시간표로 이동·펼침 -->
 <section class="core-summary">
   <h2 class="cs-title">▪ 보조강사 참여 일정</h2>
-  <a class="cs-row" href="#d1030">
-    <span class="cs-date"><span class="d-num">10. <span class="dd">30.</span></span>(금)</span>
+  <a class="cs-row changed" href="#d1029">
+    <span class="cs-date"><span class="d-num">10. <span class="dd">29.</span></span>(목)</span>
     <span class="cs-time">10:00~14:50 <span class="cs-hours">(4시간)</span></span>
     <span class="cs-count cnt-4">4명</span>
   </a>
+  <span class="cs-note">↑ <span class="was">10. 30.(금)</span> 에서 변경된 날짜입니다</span>
   <a class="cs-row" href="#d1102">
     <span class="cs-date"><span class="d-num">11. <span class="dd">2.</span></span>(월)</span>
     <span class="cs-time">10:00~16:50 <span class="cs-hours">(6시간)</span></span>
@@ -338,56 +403,7 @@
   <button class="acc-header" type="button" aria-expanded="false">
     <span class="acc-left">
       <span class="acc-date"><span class="d-num">10. 27.</span>(화)</span>
-      <span class="acc-time">화재역학·안전관리체계·다수사상자매뉴얼</span>
-    </span>
-    <span class="acc-chevron" aria-hidden="true">▾</span>
-  </button>
-  <div class="acc-body">
-    <div class="period">
-      <p class="p-time">1~3교시 · 09:00~11:50</p>
-      <p class="p-subject">화재역학 및 전술배연</p>
-      <p class="p-instructor">부산소방학교장 윤태승</p>
-    </div>
-    <div class="period">
-      <p class="p-time">4~5교시 · 13:00~14:50</p>
-      <p class="p-subject">현장 소방활동 안전관리체계 및 규정</p>
-      <p class="p-instructor">전임교수 신태선</p>
-    </div>
-    <div class="period">
-      <p class="p-time">6~7교시 · 15:00~16:50</p>
-      <p class="p-subject">다수사상자 대응매뉴얼</p>
-      <p class="p-instructor">전)구급교수 김민석</p>
-    </div>
-  </div>
-</div>
-
-<div class="acc-item" id="d1028">
-  <button class="acc-header" type="button" aria-expanded="false">
-    <span class="acc-left">
-      <span class="acc-date"><span class="d-num">10. 28.</span>(수)</span>
-      <span class="acc-time">통제단이해·상황보고실습(VR)</span>
-    </span>
-    <span class="acc-chevron" aria-hidden="true">▾</span>
-  </button>
-  <div class="acc-body">
-    <div class="period">
-      <p class="p-time">1~3교시 · 09:00~11:50</p>
-      <p class="p-subject">긴급구조통제단의 이해</p>
-      <p class="p-instructor">경북소방학교 배상두</p>
-    </div>
-    <div class="period">
-      <p class="p-time">4~7교시 · 13:00~16:50</p>
-      <p class="p-subject">재난현장 상황보고 실습(VR)</p>
-      <p class="p-instructor">지휘역량강화센터 교수단</p>
-    </div>
-  </div>
-</div>
-
-<div class="acc-item" id="d1029">
-  <button class="acc-header" type="button" aria-expanded="false">
-    <span class="acc-left">
-      <span class="acc-date"><span class="d-num">10. 29.</span>(목)</span>
-      <span class="acc-time">지휘통제절차·무전통신·심리와의사결정</span>
+      <span class="acc-time">지휘통제절차·상황보고실습(VR)</span>
     </span>
     <span class="acc-chevron" aria-hidden="true">▾</span>
   </button>
@@ -398,24 +414,46 @@
       <p class="p-instructor">전임교수 주강호</p>
     </div>
     <div class="period">
-      <p class="p-time">4~5교시 · 13:00~14:50</p>
-      <p class="p-subject">소방 무전통신의 이해 및 활용</p>
-      <p class="p-instructor">전임교수 이도경</p>
-    </div>
-    <div class="period">
-      <p class="p-time">6~7교시 · 15:00~16:50</p>
-      <p class="p-subject">현장지휘관의 심리와 의사결정</p>
-      <p class="p-instructor">구조구급교육계장 신화령</p>
+      <p class="p-time">4~7교시 · 13:00~16:50</p>
+      <p class="p-subject">재난현장 상황보고 실습(VR)</p>
+      <p class="p-instructor">지휘역량강화센터 교수단</p>
     </div>
   </div>
 </div>
 
-<div class="acc-item" id="d1030">
-  <button class="acc-header has-assist" type="button" aria-expanded="false">
+<div class="acc-item" id="d1028">
+  <button class="acc-header" type="button" aria-expanded="false">
+    <span class="acc-left">
+      <span class="acc-date"><span class="d-num">10. 28.</span>(수)</span>
+      <span class="acc-time">무전통신·심리와의사결정·<wbr>통제단및산불지휘</span>
+    </span>
+    <span class="acc-chevron" aria-hidden="true">▾</span>
+  </button>
+  <div class="acc-body">
+    <div class="period">
+      <p class="p-time">1교시 · 09:00~09:50</p>
+      <p class="p-subject">소방 무전통신의 이해 및 활용</p>
+      <p class="p-instructor">전임교수 이도경</p>
+    </div>
+    <div class="period">
+      <p class="p-time">2~3교시 · 10:00~11:50</p>
+      <p class="p-subject">현장지휘관의 심리와 의사결정</p>
+      <p class="p-instructor">구조구급계장 신화령</p>
+    </div>
+    <div class="period">
+      <p class="p-time">4~7교시 · 13:00~16:50</p>
+      <p class="p-subject">긴급구조통제단 및 산불지휘의 이해</p>
+      <p class="p-instructor">경북소방학교 배상두</p>
+    </div>
+  </div>
+</div>
+
+<div class="acc-item" id="d1029">
+  <button class="acc-header has-assist is-changed" type="button" aria-expanded="false">
     <span class="acc-left">
       <span class="acc-date-line">
-        <span class="acc-date"><span class="d-num">10. 30.</span>(금)</span>
-        <span class="acc-inline-badge cnt-4">보조강사 4명</span>
+        <span class="acc-date"><span class="d-num">10. 29.</span>(목)</span>
+        <span class="acc-inline-badge is-new">보조강사 4명 · 변경</span>
       </span>
       <span class="acc-time">단계별 지휘절차·VR실습·전술상황판</span>
     </span>
@@ -437,6 +475,33 @@
       <p class="p-time">6~7교시 · 15:00~16:50</p>
       <p class="p-subject">전술상황판 작성요령 및 실습</p>
       <p class="p-instructor">ICTC센터장 정종인</p>
+    </div>
+  </div>
+</div>
+
+<div class="acc-item" id="d1030">
+  <button class="acc-header" type="button" aria-expanded="false">
+    <span class="acc-left">
+      <span class="acc-date"><span class="d-num">10. 30.</span>(금)</span>
+      <span class="acc-time">다수사상자매뉴얼·안전관리체계·<wbr>화재역학</span>
+    </span>
+    <span class="acc-chevron" aria-hidden="true">▾</span>
+  </button>
+  <div class="acc-body">
+    <div class="period">
+      <p class="p-time">1~2교시 · 09:00~10:50</p>
+      <p class="p-subject">다수사상자 대응매뉴얼</p>
+      <p class="p-instructor">전)구급교수 김민석</p>
+    </div>
+    <div class="period">
+      <p class="p-time">3~4교시 · 11:00~13:50</p>
+      <p class="p-subject">현장 소방활동 안전관리체계 및 규정</p>
+      <p class="p-instructor">전임교수 신태선</p>
+    </div>
+    <div class="period">
+      <p class="p-time">5~7교시 · 14:00~16:50</p>
+      <p class="p-subject">화재역학 및 전술배연</p>
+      <p class="p-instructor">부산소방학교장 윤태승</p>
     </div>
   </div>
 </div>
